@@ -1,0 +1,297 @@
+/*=====
+FONTES
+=======*/
+/*inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/*Google Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/*open*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+/*===================
+CONFIGURAÇOES GLOBAIS
+=====================*/
+:root{
+    --background-gradient: linear-gradient(90deg, rgba(22, 93, 251, 1) 0%,rgba(86, 58, 251, 0.91) 50%,rgba(150, 22, 250, 1) 100%);  
+    --background: #f3f6ff;
+    --background-icon: #567bfc;
+    --text-color1: #ffffff;
+    --gap-icons: 1rem;
+}
+
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* evita que o elemento saia quando adicionar padding e bordas*/
+}
+
+/* Por causa do reset global o dialog perde a configuração padrao, entao tenho que fazer ela manualmente*/
+dialog{
+    margin: auto;
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+html{ font-size: 65.5%;} /* vai deixar 1 rem = 10 px*/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: var(--background);
+}
+
+.conteiner-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+    height: 100vh;
+    padding: 2rem;
+    margin:  0 auto;
+
+
+}
+
+/*===================================
+CONFIGURAÇOES DO CABEÇALHO DO SISTEMA
+=====================================*/
+
+.cabeçalho{
+    width: 100%;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    
+    padding: 3.2rem;
+    margin-bottom: 3.2rem;
+    gap: var(--gap-icons);
+    border-radius: 15px;
+    
+    background: var(--background-gradient);
+ 
+}
+
+.icon-dumbbell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.8rem;
+    height: 3.8rem;
+
+    border-radius: 10px;
+    background-color: var(--background-icon);
+}
+
+.paragrafo-titulo{
+
+    color: var(--text-color1) ;
+}
+
+.paragrafo-titulo h1{
+    font-size: 5rem;
+}
+
+.paragrafo-titulo p{
+    font-size: 2rem;
+}
+
+.botao-nova-disciplina{
+    margin-bottom: 3.2rem;
+}
+
+/* CSS de todos os botoes pra abrir o modal pra nova disciplina*/
+.cadastro-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-icons);
+
+    font-size: 1.60rem;
+    border: none;
+    border-radius: 10px;
+    padding: 1.4rem 2.4rem;
+
+    color: var(--text-color1);
+    background: var(--background-gradient);
+}
+
+
+/*=====================================
+CONFIGURAÇOES DO CONTEUDO DA DISCIPLINA
+=======================================*/
+.conteudo{
+    width: 100%;
+}
+
+.nenhuma-disciplina{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 6.4rem;
+    gap: 2rem;
+
+    border: 2px solid #e5e7eb;
+    border-radius: 15px;
+
+    background-color: white;
+}
+
+.icon-nenhuma-disciplina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 96px;
+    height: 96px;
+
+    border-radius: 15px;
+    background: #ede9ff;
+
+}
+
+.nenhuma-disciplina h2{
+    font-size: 2rem;
+}
+
+.nenhuma-disciplina p{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+/*===========
+ CSS DO MODAL 
+ ============*/
+
+.conteiner-modal{
+    width: 25%;
+    max-height: 100%;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.head-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2.4rem;
+
+    background: var(--background-gradient);
+}
+
+.icon-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--gap-icons);
+}
+
+.title-modal{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color1);
+}
+
+.bloco-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 5px;
+
+    background: var(--background-icon) ;
+}
+
+/*CSS do form do modal*/
+
+.modal-body{
+    padding: 2.4rem;
+}
+
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+
+    margin-bottom: 2rem;
+
+}
+
+.form-nome, .form-professor, .form-horario, .form-area{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    gap: 0.5rem;
+
+    font-size: 1.4rem;
+}
+
+input, select{
+    padding: 1rem 1.4rem;
+
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 12px;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancelar-form, .gravar-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 49%;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+}
+
+.cancelar-form{
+    border: 1px solid rgb(166, 166, 166);
+    background: none;
+}
+
+.gravar-form{
+    border: none;
+    background: var(--background-gradient);
+    
+    color: var(--text-color1);
+
+    gap: var(--gap-icons);
+}
+
+
+
+
+
+
+

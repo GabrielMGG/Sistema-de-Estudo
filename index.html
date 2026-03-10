@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Estudo</title>
+</head>
+<body>
+
+    <main class="conteiner-principal">
+        <!--                                       -->
+        <Section class="cabeçalho">
+            <div class="titulo">
+                <div class="icon-dumbbell">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                </div>
+                <div class="paragrafo-titulo">
+                    <h1>Sistema de Controle de Estudos</h1>
+                    <p>Organize suas disciplinas e alcance seus objetivos acadêmicos</p>
+                </div>
+            </div>
+            <div class="botao-nova-disciplina">
+                <button class="cadastro-modal open-modal" data-modal="modal-1"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Nova Disciplina</button>
+            </div>
+        </Section>
+        <section class="conteudo">
+            <div class="nenhuma-disciplina">
+
+                <div class="icon-nenhuma-disciplina">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 24 24" fill="none" stroke="#155dfc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                </div>
+
+                <h2>Nenhuma disciplina cadastrada</h2>
+
+                <p class="p-nenhuma-disciplina">Comece sua jornada de estudos adicionando suas primeiras<br>disciplinas e acompanhe seu progresso em tempo real</p>
+
+                <button class="cadastro-modal open-modal" data-modal="modal-1"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Adicionar Primeira Disciplina</button>
+            </div>
+            <template class="card-disciplina">
+                <div class="head-disciplina">
+                    <div class="icon">
+                    </div>
+                    <div class="materia-professor">
+                    </div>
+                    <div class="grupo">
+                    </div>
+                </div>
+                <div class="horas-disciplina">
+                    <div class="estudadas">
+                        <p>Estudadas</p>
+                        <span class="horas-estudadas">0h</span>
+                    </div>
+                    <div class="Restantes">
+                        <p>Restantes</p>
+                        <span class="horas-Restantes">0h</span>
+                    </div>
+                    <div class="Total">
+                        <p>Total</p>
+                        <span class="horas-Total">0h</span>
+                    </div>
+                </div>
+                <div class="edicao">
+                    <div class="progresso-disciplina">
+                        <p>Progresso da Disciplina</p>
+                        <span class="barra-progresso">
+                        </span>
+                    </div>
+                    <div class="btn-edicao">
+                        <button class="registrar-hora">Registrar Horas</button>
+                        <button class="editar"></button>
+                        <button class="deletar"></button>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </main>
+    
+
+    <!-- CRIAÇÃO DO MODAL -->
+     <dialog id="modal-1" class="conteiner-modal">
+
+        <div class="head-modal">
+            <div class="icon-modal">
+                <span class="bloco-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                </span>
+                <p class="title-modal">Nova Disciplina</p>
+            </div>
+            
+            <button class="close-modal" data-modal="modal-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <div class="modal-body">
+            <div class="modal-form">
+                    <div class="form-nome">
+                        <label for="nomeDisciplina" >Nome da Disciplina *</label>
+                        <input type="text" id="nomeDisciplina" placeholder="Ex: Fundamentos de Software">
+                    </div>
+                    <div class="form-professor">
+                        <label for="professor">Professor Responsável *</label>
+                        <input type="text" id="professor" name="professor" placeholder="Ex: Prof. Osmar Henrique">
+                    </div>
+                    <div class="form-horario">
+                        <label for="carga-horaria">Carga Horária Total (horas) *</label>
+                        <input type="number" id="carga-horaria" name="carga-horaria" placeholder="Ex: 60" >
+                    </div>
+                    <div class="form-area">
+                        <label for="area-conhecimento">Área do Conhecimento *</label>
+                        <select name="area-conhecimento" id="area-conhecimento">
+                            <option value="Exata">Exata</option>
+                            <option value="Humanas">Humanas</option>
+                            <option value="Biológicas">Biológicas</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="close-modal cancelar-form" data-modal="modal-1">Cancelar</button>
+                <button class="gravar-form">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg></span>
+                    Adicionar</button>
+            </div>
+        </div>
+        
+     </dialog>
+
+
+
+
+
+    <script src="assets/script.js"></script>
+</body>
+
+    
+</html>
