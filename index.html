@@ -13,7 +13,7 @@
         <Section class="cabeçalho">
             <div class="titulo">
                 <div class="icon-dumbbell">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
                 </div>
                 <div class="paragrafo-titulo">
                     <h1>Sistema de Controle de Estudos</h1>
@@ -37,42 +37,58 @@
 
                 <button class="cadastro-modal open-modal" data-modal="modal-1"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Adicionar Primeira Disciplina</button>
             </div>
-            <template class="card-disciplina">
-                <div class="head-disciplina">
-                    <div class="icon">
+
+            <!--==========================================
+            Configuração do Grid e Template da Disciplinas
+            ==============================================-->
+            <div class="grid-template">
+
+                <div class="card-disciplina">
+                    <div class="head-disciplina"><!-- Nao esquecer de mudarpra template depois-->
+                        <div class="icon-materia">
+                            <span class="icon-template">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ff6900" class="bi bi-code" viewBox="0 0 16 16">
+                                <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z"/>
+                                </svg>
+                            </span>
+                            <div class="materia-professor">
+                            <p class="nome-materia"></p>
+                            <p class="nome-professor"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="grupo">
+                            <p class="area-estudada">Exatas</p>
+                        </div>
                     </div>
-                    <div class="materia-professor">
+                    <div class="horas-disciplina">
+                        <div class="estudadas">
+                            <p>Estudadas</p>
+                            <span class="horas-estudadas">0h</span>
+                        </div>
+                        <div class="Restantes">
+                            <p>Restantes</p>
+                            <span class="horas-Restantes">0h</span>
+                        </div>
+                        <div class="Total">
+                            <p>Total</p>
+                            <span class="horas-Total">0h</span>
+                        </div>
                     </div>
-                    <div class="grupo">
+                    <div class="edicao">
+                        <div class="progresso-disciplina">
+                            <p>Progresso da Disciplina</p>
+                            <span class="barra-progresso">
+                            </span>
+                        </div>
+                        <div class="btn-edicao">
+                            <button class="registrar-hora">Registrar Horas</button>
+                            <button class="editar"></button>
+                            <button class="deletar"></button>
+                        </div>
                     </div>
-                </div>
-                <div class="horas-disciplina">
-                    <div class="estudadas">
-                        <p>Estudadas</p>
-                        <span class="horas-estudadas">0h</span>
-                    </div>
-                    <div class="Restantes">
-                        <p>Restantes</p>
-                        <span class="horas-Restantes">0h</span>
-                    </div>
-                    <div class="Total">
-                        <p>Total</p>
-                        <span class="horas-Total">0h</span>
-                    </div>
-                </div>
-                <div class="edicao">
-                    <div class="progresso-disciplina">
-                        <p>Progresso da Disciplina</p>
-                        <span class="barra-progresso">
-                        </span>
-                    </div>
-                    <div class="btn-edicao">
-                        <button class="registrar-hora">Registrar Horas</button>
-                        <button class="editar"></button>
-                        <button class="deletar"></button>
-                    </div>
-                </div>
-            </template>
+                </div><!-- Aqui fica o final do template pra quando for mudar novamente-->
+            </div>
         </section>
     </main>
     
@@ -88,7 +104,7 @@
                 <p class="title-modal">Nova Disciplina</p>
             </div>
             
-            <button class="close-modal" data-modal="modal-1">
+            <button class="close-modal btn-close" data-modal="modal-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
         </div>

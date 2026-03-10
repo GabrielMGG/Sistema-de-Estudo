@@ -1,6 +1,7 @@
 /*=====
 FONTES
 =======*/
+
 /*inter*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -23,6 +24,7 @@ CONFIGURAÇOES GLOBAIS
     --background: #f3f6ff;
     --background-icon: #567bfc;
     --text-color1: #ffffff;
+    --borda-cor-cards: #e5e7eb;
     --gap-icons: 1rem;
 }
 
@@ -87,8 +89,8 @@ CONFIGURAÇOES DO CABEÇALHO DO SISTEMA
     justify-content: center;
     align-items: center;
 
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 5.8rem;
+    height: 5.8rem;
 
     border-radius: 10px;
     background-color: var(--background-icon);
@@ -100,11 +102,11 @@ CONFIGURAÇOES DO CABEÇALHO DO SISTEMA
 }
 
 .paragrafo-titulo h1{
-    font-size: 5rem;
+    font-size: 2.4rem;
 }
 
 .paragrafo-titulo p{
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .botao-nova-disciplina{
@@ -125,6 +127,8 @@ CONFIGURAÇOES DO CABEÇALHO DO SISTEMA
 
     color: var(--text-color1);
     background: var(--background-gradient);
+
+    cursor: pointer;
 }
 
 
@@ -171,6 +175,47 @@ CONFIGURAÇOES DO CONTEUDO DA DISCIPLINA
     font-size: 1.6rem;
     text-align: center;
 }
+
+/*============================= 
+CSS DA CONFIGURAÇÃO DO TEMPLATE
+===============================*/
+
+.grid-template{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    margin-top: 10px; /*====== apenas temporario======*/
+}
+
+.card-disciplina{
+
+    width: 100%;
+    max-height: 100%;
+
+    border: 1PX solid --borda-cor-cards;
+
+    
+}
+
+.head-disciplina{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 1.6rem 2rem;
+
+    background-color: #fff3e3;
+}
+
+.icon-materia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
 
 /*===========
@@ -220,6 +265,21 @@ CONFIGURAÇOES DO CONTEUDO DA DISCIPLINA
     border-radius: 5px;
 
     background: var(--background-icon) ;
+}
+
+.btn-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.09);
+
+    cursor: pointer;
 }
 
 /*CSS do form do modal*/
@@ -273,6 +333,8 @@ input, select{
 
     padding: 0.6rem 1rem;
     border-radius: 10px;
+
+    cursor: pointer;
 }
 
 .cancelar-form{
