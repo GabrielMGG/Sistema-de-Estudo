@@ -9,7 +9,9 @@
 <body>
 
     <main class="conteiner-principal">
-        <!--                                       -->
+        <!--====================================================
+        CONFIGURAÇÃO DA SEÇÃO DO CABEÇALHO DO SISTEMA DE ESTUDOS
+        ========================================================-->
         <Section class="cabeçalho">
             <div class="titulo">
                 <div class="icon-dumbbell">
@@ -20,10 +22,47 @@
                     <p>Organize suas disciplinas e alcance seus objetivos acadêmicos</p>
                 </div>
             </div>
+
+            <div class="conteiner-dashboard">
+                <div class="card-dashboard dashboard-disciplina">
+                    <span class="back-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#45556c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                    </span>
+                    <p>Disciplinas</p>
+                    <span class="qtn-disciplina">0</span>
+                </div>
+                <div class="card-dashboard dashboard-estudadas">
+                    <span class="back-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#45556c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock2-icon lucide-clock-2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4-2"/></svg>
+                    </span>
+                    <p>Horas Estudadas</p>
+                    <span class="qtn-horas-estudadas">0<span class="espaço">h</span></span>
+                </div>
+                <div class="card-dashboard dashboard-progresso">
+                    <span class="back-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#45556c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target-icon lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </span>
+                    <p>Progresso Geral</p>
+                    <span class="qtn-progresso">0<span class="espaço">%</span></span>
+                </div>
+                <div class="card-dashboard dashboard-completas ">
+                    <span class="back-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#45556c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-medal-icon lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg>
+                    </span>
+                    <p>Completas</p>
+                    <span class="qtn-completas">0</span>
+                </div>
+            </div>
+
+
             <div class="botao-nova-disciplina">
                 <button class="cadastro-modal open-modal" data-modal="modal-1"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Nova Disciplina</button>
             </div>
         </Section>
+
+        <!--===============================================================
+        CONFIGURAÇÃO DA SEÇÃO DO BLOCO QUANDO NAO TEM DISCIPLINA CADASTRADA
+       ====================================================================-->
         <section class="conteudo">
             <div class="nenhuma-disciplina">
 
@@ -43,8 +82,8 @@
             ==============================================-->
             <div class="grid-template">
 
-                <div class="card-disciplina">
-                    <div class="head-disciplina"><!-- Nao esquecer de mudarpra template depois-->
+                <template class="card-disciplina"><!-- Nao esquecer de mudarpra template depois-->
+                    <div class="head-disciplina">
                         <div class="icon-materia">
                             <span class="icon-template">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ff6900" class="bi bi-code" viewBox="0 0 16 16">
@@ -87,7 +126,7 @@
                             </div>
 
                             <div class="btn-edicao">
-                                <button class="registrar-hora"> 
+                                <button class="registrar-hora open-modal" data-modal="modal-2"> 
                                 <span class="relogio">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-plus-icon lucide-clock-plus"><path d="M12 6v6l3.644 1.822"/><path d="M16 19h6"/><path d="M19 16v6"/><path d="M21.92 13.267a10 10 0 1 0-8.653 8.653"/></svg>
                                 </span> Registrar Horas</button>
@@ -100,13 +139,16 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- Aqui fica o final do template pra quando for mudar novamente-->
-            </div>
+                </div>
+            </template><!-- Aqui fica o final do template pra quando for mudar novamente-->
         </section>
     </main>
     
 
-    <!-- CRIAÇÃO DO MODAL -->
+    <!--============ 
+    CRIAÇÃO DO MODAL 1
+    ================-->
+
      <dialog id="modal-1" class="conteiner-modal">
 
         <div class="head-modal">
@@ -114,7 +156,7 @@
                 <span class="bloco-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
                 </span>
-                <p class="title-modal">Nova Disciplina</p>
+                <h2 class="title-modal">Nova Disciplina</h2>
             </div>
             
             <button class="close-modal btn-close" data-modal="modal-1">
@@ -154,6 +196,46 @@
             </div>
         </div>
         
+     </dialog>
+
+     <!--==============
+     CRIAÇÃO DO MODAL 2
+     ==================-->
+
+     <dialog id="modal-2" class="conteiner-modal">
+        <div class="head-modal-2">
+            <div class="title-icon">
+                <div class="icon-modal-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock2-icon lucide-clock-2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4-2"/></svg>
+                </div>
+                <h2 class="title-modal">Registrar Horas</h2>
+            </div>
+            <button class="close-modal btn-close" data-modal="modal-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+
+        </div>
+
+        <div class="modal-body-2">
+
+            <div class="modal-form-2">
+                <div class="disciplina-gravada">
+                    <p>Disciplina</p>
+                    <span class="disciplina-usuario">Fundamentos de Software</span>
+                </div>
+                <div class="form-registrar-horario">
+                    <label for="adicionar-horario">Horas estudadas</label>
+                    <input type="number" id="adicionar-horario" name="adicionar-horario" placeholder="Ex: 60">
+                </div>
+                <div class="modal-footer-2">
+                    <button class="close-modal cancelar-form" data-modal="modal-2">Cancelar</button>
+                    <button class="gravar-horario">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>
+                        Adicionar</button>
+                </div>
+            </div>
+
+        </div>
      </dialog>
 
 
