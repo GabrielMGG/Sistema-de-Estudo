@@ -23,9 +23,14 @@ CONFIGURAÇOES GLOBAIS
     --background-gradient: linear-gradient(90deg, rgba(22, 93, 251, 1) 0%,rgba(86, 58, 251, 0.91) 50%,rgba(150, 22, 250, 1) 100%);  
     --background: #f3f6ff;
     --background-icon: #567bfc;
+    --background-1: white;
+
+    --body-template-cards: linear-gradient(180deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%);
     --text-color1: #ffffff;
     --borda-cor-cards: #e5e7eb;
     --gap-icons: 1rem;
+
+    --cor-tecnologia: #ff6900;
 }
 
 /* RESET E CONFIGURAÇÕES GLOBAIS */
@@ -43,7 +48,7 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.8);
 }
 
-html{ font-size: 65.5%;} /* vai deixar 1 rem = 10 px*/
+html{ font-size: 62.5%;} /* vai deixar 1 rem = 10 px*/
 
 body{
     font-family: 'Open Sans', sans-serif;
@@ -151,7 +156,7 @@ CONFIGURAÇOES DO CONTEUDO DA DISCIPLINA
     border: 2px solid #e5e7eb;
     border-radius: 15px;
 
-    background-color: white;
+    background-color: var(--background-1);
 }
 
 .icon-nenhuma-disciplina{
@@ -185,7 +190,7 @@ CSS DA CONFIGURAÇÃO DO TEMPLATE
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 
-    margin-top: 10px; /*====== apenas temporario======*/
+    padding: 20px 0; /*====== apenas temporario======*/
 }
 
 .card-disciplina{
@@ -193,7 +198,8 @@ CSS DA CONFIGURAÇÃO DO TEMPLATE
     width: 100%;
     max-height: 100%;
 
-    border: 1PX solid --borda-cor-cards;
+    border: 1px solid var(--borda-cor-cards);
+    border-radius: 15px;
 
     
 }
@@ -204,6 +210,7 @@ CSS DA CONFIGURAÇÃO DO TEMPLATE
     align-items: center;
     
     padding: 1.6rem 2rem;
+    border-radius: 15px 15px 0 0; /*Sem essa configuraçao o head disciplina vai sobrepor o card-disciplina*/
 
     background-color: #fff3e3;
 }
@@ -212,10 +219,162 @@ CSS DA CONFIGURAÇÃO DO TEMPLATE
     display: flex;
     justify-content: center;
     align-items: center;
+
+    gap: var(--gap-icons);
+}
+
+.grupo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 1.6rem;
+    border-radius: 10px;
+
+    background: var(--cor-tecnologia);
+}
+
+.area-estudada{
+    font-size: 1.2rem;
+    color: var(--text-color1);
+}
+
+.icon-template{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.8rem;
+    height: 3.8rem;
+
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.nome-materia{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.nome-professor{
+    font-size: 1.2rem;
+}
+
+.horas-disciplina{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 1.6rem;
+}
+
+.horas-disciplina p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.horas-estudadas, .horas-restantes, .horas-total{
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.body-template{
+    padding: 2.5rem;
+    background: var(--background-1);
+
+    border-radius: 0 0 15px 15px; /*Sem essa configuraçao o body template vai sobrepor o card-disciplina*/
+}
+
+.estudadas, .restantes, .total{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.2rem;
+    border-radius: 10px;
+
+    background: var(--body-template-cards);
+
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0; 
+}   
+
+.progresso-disciplina{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+
+    margin-bottom: 1.2rem;
+    gap: 0.8rem;
+}
+
+.texto-titulo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto-titulo p{
+    font-size: 1.2rem;
 }
 
 
+.barra-progresso{
+    width: 100%;
+    height: 1.2rem;
+    
+    border-radius: 20px;
+    background: rgb(222, 222, 222);
 
+    box-shadow:        inset 0 2px 6px rgba(107, 114, 128, 0.4),0 4px 6px -1px rgba(0, 0, 0, 0.1);/* vai criar uma sombra interna na barra*/
+}
+
+
+.btn-edicao{
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: 1.5rem;
+}
+
+.registrar-hora{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    
+    /* Faz ele ocupar todo o espaço disponível à esquerda */
+    flex-grow: 1; 
+    
+    height: 4.5rem; /* Altura fixa para alinhar com os outros */
+    border: none;
+    border-radius: 10px;
+    background: var(--cor-tecnologia);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.btn-curto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 4.5rem; 
+    height: 4.5rem;
+    
+    /* e pra impidir que o flexbox estique o botão */
+    flex-shrink: 0; 
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
 
 
 /*===========
@@ -350,10 +509,3 @@ input, select{
 
     gap: var(--gap-icons);
 }
-
-
-
-
-
-
-
