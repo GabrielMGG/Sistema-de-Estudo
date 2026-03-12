@@ -8,11 +8,13 @@
 </head>
 <body>
 
-    <main class="conteiner-principal">
-        <!--====================================================
-        CONFIGURAÇÃO DA SEÇÃO DO CABEÇALHO DO SISTEMA DE ESTUDOS
-        ========================================================-->
-        <Section class="cabeçalho">
+    <!--====================================================
+        CONFIGURAÇÃO DO CABEÇALHO DO SISTEMA DE ESTUDOS
+    ========================================================-->
+
+    <div class="conteiner-principal">
+        
+        <header class="cabeçalho">
             <div class="titulo">
                 <div class="icon-dumbbell">
                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -58,7 +60,7 @@
             <div class="botao-nova-disciplina">
                 <button class="cadastro-modal open-modal" data-modal="modal-1"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Nova Disciplina</button>
             </div>
-        </Section>
+        </header>
 
         <!--===============================================================
         CONFIGURAÇÃO DA SEÇÃO DO BLOCO QUANDO NAO TEM DISCIPLINA CADASTRADA
@@ -139,10 +141,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </template><!-- Aqui fica o final do template pra quando for mudar novamente-->
+                </template><!-- Aqui fica o final do template pra quando for mudar novamente-->
+            </div>
         </section>
-    </main>
+    </div>
     
 
     <!--============ 
@@ -168,15 +170,15 @@
             <div class="modal-form">
                     <div class="form-nome">
                         <label for="nomeDisciplina" >Nome da Disciplina *</label>
-                        <input type="text" id="nomeDisciplina" placeholder="Ex: Fundamentos de Software">
+                        <input type="text" id="nomeDisciplina" placeholder="Ex: Fundamentos de Software" required>
                     </div>
                     <div class="form-professor">
                         <label for="professor">Professor Responsável *</label>
-                        <input type="text" id="professor" name="professor" placeholder="Ex: Prof. Osmar Henrique">
+                        <input type="text" id="professor" name="professor" placeholder="Ex: Prof. Osmar Henrique" required>
                     </div>
                     <div class="form-horario">
                         <label for="carga-horaria">Carga Horária Total (horas) *</label>
-                        <input type="number" id="carga-horaria" name="carga-horaria" placeholder="Ex: 60" >
+                        <input type="number" id="carga-horaria" name="carga-horaria" placeholder="Ex: 60" required >
                     </div>
                     <div class="form-area">
                         <label for="area-conhecimento">Área do Conhecimento *</label>
