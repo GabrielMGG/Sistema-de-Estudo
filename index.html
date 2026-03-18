@@ -25,6 +25,10 @@
                 </div>
             </section>
 
+            <!--=====================
+            CONFIGURAÇÃO DO DASHBOARD
+            =========================-->
+
             <section class="conteiner-dashboard">
                 <div class="card-dashboard dashboard-disciplina">
                     <span class="back-icon">
@@ -74,7 +78,7 @@
 
                 <h2>Nenhuma disciplina cadastrada</h2>
 
-                <p class="p-nenhuma-disciplina">Comece sua jornada de estudos adicionando suas primeiras<br>disciplinas e acompanhe seu progresso em tempo real</p>
+                <p class="p-nenhuma-disciplina">Comece sua jornada de estudos adicionando suas primeiras<br>disciplinas e acompanhe seu progresso em tempo real.</p>
 
                 <button class="cadastro-modal open-modal" data-modal="modal-1" type="button"><span class="icon-plus"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>Adicionar Primeira Disciplina</button>
             </section>
@@ -125,6 +129,7 @@
                                         <p class="porcentagem">0%</p>
                                     </div>
                                     <span class="barra-progresso">
+                                        <div class="preenchimento"></div>
                                     </span>
                                 </div>
                                 <div class="btn-edicao">
@@ -179,7 +184,7 @@
                     </div>
                     <div class="form-horario">
                         <label for="carga-horaria">Carga Horária Total (horas) *</label>
-                        <input type="number" id="carga-horaria" name="carga-horaria" placeholder="Ex: 60" required >
+                        <input type="number"  min="1" max="1000" id="carga-horaria" name="carga-horaria" placeholder="Ex: 60" required >
                     </div>
                     <div class="form-area">
                         <label for="area-conhecimento">Área do Conhecimento *</label>
@@ -219,7 +224,7 @@
 
         </header>
 
-        <form class="modal-form-2" method="POST">
+        <form id="form-horario" class="modal-form-2" method="POST">
 
             <div class="modal-body-2">
                 <div class="disciplina-gravada">
@@ -228,7 +233,7 @@
                 </div>
                 <div class="form-registrar-horario">
                     <label for="adicionar-horario">Horas estudadas</label>
-                    <input type="number" id="adicionar-horario" name="adicionar-horario" placeholder="Ex: 60"  required>
+                    <input type="number"  min="0" max="1000" id="adicionar-horario" name="adicionar-horario" placeholder="Ex: 60"  required>
                 </div>
                 
             </div>
